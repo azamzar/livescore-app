@@ -5,8 +5,8 @@ type Props = {
   teamB: string;
   logoA: string;
   logoB: string;
-  scoreA: number;
-  scoreB: number;
+  scoreA: number | null;
+  scoreB: number | null;
   time: string;
   status: string;
 };

@@ -5,6 +5,7 @@ import { getRoundMatches } from "../../lib/getRoundMatches";
 import { getCompetitionDetails } from "../../lib/getCompetitionDetails";
 import MatchCard from "../components/MatchCard";
 import Navbar from "../components/Navbar";
+import { Match } from "@/app/types/match";
 
 const competitionCodes = [
   { code: "PL", name: "Premier League" },
@@ -216,7 +217,7 @@ export default function Jornadas() {
             <h3 className="font-semibold mb-4 text-gray-700 dark:text-gray-300">
               Partidos de la Jornada {selectedRound}
             </h3>
-            {matches.map((match) => (
+            {matches.map((match: Match) => (
               <MatchCard
                 key={match.id}
                 teamA={match.homeTeam.name}
