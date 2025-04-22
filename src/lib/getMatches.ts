@@ -1,9 +1,6 @@
 // src/lib/getMatches.ts
 
 export async function getMatches() {
-  const today = new Date();
-  const dateStr = today.toISOString().split("T")[0]; // YYYY-MM-DD
-
   const res = await fetch(`https://api.football-data.org/v4/matches`, {
     headers: {
       "X-Auth-Token": process.env.NEXT_PUBLIC_FOOTBALL_DATA_API_KEY!,

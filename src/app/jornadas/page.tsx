@@ -28,7 +28,7 @@ export default function Jornadas() {
     defaultCompetitionCode
   );
   const [selectedRound, setSelectedRound] = useState<number | string>(""); // Empezará vacío
-  const [matches, setMatches] = useState<any[] | null>(null);
+  const [matches, setMatches] = useState<Match[] | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [availableRounds, setAvailableRounds] = useState<number[]>(
@@ -97,7 +97,7 @@ export default function Jornadas() {
             parseInt(selectedRound as string)
           );
           setMatches(data);
-        } catch (err: any) {
+        } catch (err: unknown) {
           setError("Error al cargar los partidos de la jornada.");
           console.error(err);
         } finally {
