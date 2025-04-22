@@ -87,13 +87,13 @@ export default function Jornadas() {
         setError(null);
         setMatches(null); // Limpiar partidos anteriores
         try {
-          const currentYear = new Date().getFullYear(); // Obtén el año actual (verifica si 2024 o 2025 es correcto para la API)
-          // Considera obtener el año de la temporada actual de los detalles de la competición si está disponible
-          const yearToFetch = 2024; // <-- Ajusta esto según lo que funcione con la API para la temporada actual (probablemente 2024)
+          // Obtener la temporada actual
+          const details = await getCompetitionDetails(selectedCompetition);
+          const yearToFetch = details.currentSeason.startDate.split("-")[0]; // Obtener el año de inicio de la temporada
 
           const data = await getRoundMatches(
             selectedCompetition,
-            yearToFetch, // Usar el año ajustado
+            yearToFetch,
             parseInt(selectedRound as string)
           );
           setMatches(data);

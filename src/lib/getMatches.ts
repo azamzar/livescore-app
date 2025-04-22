@@ -27,7 +27,16 @@ export async function getMatches() {
     "CL", // Champions League
   ];
 
-  const filteredMatches = data.matches.filter((match: any) =>
+  // Definir la estructura de los objetos que estamos utilizando
+  interface Competition {
+    code: string;
+  }
+
+  interface Match {
+    competition: Competition;
+  }
+
+  const filteredMatches = data.matches.filter((match: Match) =>
     allowedCompetitionCodes.includes(match.competition.code)
   );
 

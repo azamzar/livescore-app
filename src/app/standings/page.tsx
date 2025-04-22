@@ -127,7 +127,7 @@ export default function StandingsPage() {
         try {
           const data = await getStandings(selectedCompetition);
           setStandingsData(data.standings);
-        } catch (err: any) {
+        } catch (err: unknown) {
           setError("Error al cargar la clasificación.");
           console.error(err);
         } finally {
