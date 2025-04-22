@@ -41,21 +41,26 @@ export default function MatchCard({
       </div>
 
       {/* Equipos */}
-      <div className="flex-1 flex flex-col sm:flex-row justify-between items-center mx-4 gap-2">
-        <div className="flex items-center gap-2">
+      <div className="flex-1 flex flex-col sm:flex-row justify-between items-center text-center mx-4 gap-4">
+        {/* Equipo A */}
+        <div className="flex items-center justify-center gap-2">
           <img src={logoA} alt={teamA} className="w-6 h-6 sm:w-8 sm:h-8" />
           <span className="font-semibold text-sm sm:text-base text-gray-900 dark:text-gray-100">
             {teamA}
           </span>
         </div>
+
+        {/* VS */}
         <span className="text-gray-700 dark:text-gray-200 text-xs sm:text-base mx-2">
           vs
         </span>
-        <div className="flex items-center gap-2">
+
+        {/* Equipo B */}
+        <div className="flex items-center justify-center gap-2">
+          <img src={logoB} alt={teamB} className="w-6 h-6 sm:w-8 sm:h-8" />
           <span className="font-semibold text-sm sm:text-base text-gray-900 dark:text-gray-100">
             {teamB}
           </span>
-          <img src={logoB} alt={teamB} className="w-6 h-6 sm:w-8 sm:h-8" />
         </div>
       </div>
 
