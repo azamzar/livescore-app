@@ -32,13 +32,7 @@ export default async function Home() {
               logoB={match.awayTeam.crest}
               scoreA={match.score.fullTime.home ?? 0}
               scoreB={match.score.fullTime.away ?? 0}
-              time={new Date(match.utcDate).toLocaleString("es-ES", {
-                weekday: "short",
-                day: "2-digit",
-                month: "short",
-                hour: "2-digit",
-                minute: "2-digit",
-              })}
+              utcDate={match.utcDate}
               status={match.status}
             />
           ))

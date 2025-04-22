@@ -226,13 +226,7 @@ export default function Jornadas() {
                 logoB={match.awayTeam.crest}
                 scoreA={match.score.fullTime.home ?? null} // Usa null para scores no disponibles
                 scoreB={match.score.fullTime.away ?? null} // Usa null para scores no disponibles
-                time={new Date(match.utcDate).toLocaleString("es-ES", {
-                  weekday: "short",
-                  day: "2-digit",
-                  month: "short",
-                  hour: "2-digit",
-                  minute: "2-digit",
-                })}
+                utcDate={match.utcDate}
                 status={match.status} // 👈 Asegúrate de pasar el status aquí
               />
             ))}
